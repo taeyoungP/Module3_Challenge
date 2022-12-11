@@ -44,8 +44,9 @@ When red button is clicked, prompt box will appear asking for the length of the 
 
 Once proper length has been provided, there will be total four confirm boxes pop up to ask user to include lowercase, uppercase, numeric, and/or special characters for the password. If none of them are selected, since there is no selected criteria, it will exit with alert saying that password cannot be generated. 
 
-After criteria selection, now it will generate based on user's input, and the result(password) will show up inside the box of the webpage.
-(./Assets/module3_Challenge2.png)
+After criteria selection, now it will generate based on user's input, and the result(password) will show up inside the box of the webpage:
+
+![The Password Generator application displays a generated password.](./Assets/module3_Challenge2.png)
 
 
 
