@@ -38,7 +38,15 @@ THEN the password is either displayed in an alert or written to the page
 
 The following image shows the web application's appearance and functionality:
 
-![The Password Generator application displays a red button to "Generate Password".](./Assets/03-javascript-homework-demo.png)
+![The Password Generator application displays a red button to "Generate Password".](./Assets/module3_Challenge.png)
+
+When red button is clicked, prompt box will appear asking for the length of the paswword. Uesr needs to input password length that is at least 8 and no more than 128. Otherwise, generator will not make password.
+
+Once proper length has been provided, there will be total four confirm box pop ups to ask user to include lowercase, uppercase, numeric, and/or special characters. If none of them are chosen, since there is no selected criteria, it will exit with alert saying that password cannot be generated. 
+
+![After criteria selection, now it will generate based on user's input, and the result(password) will show up inside the box of the webpage.](./Assets/module3_Challenge2.png)
+
+
 
 ## Grading Requirements
 

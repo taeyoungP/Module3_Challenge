@@ -25,26 +25,31 @@ var password = {
 
 }
 
-function passwordLength(lengthPassword) { //Check if user input is numeric value and has proper length
+//Check if user input is numeric value and has proper length
+function passwordLength(lengthPassword) { 
   if(lengthPassword === null){ //canceled
     return 1;
   }
   if(!(isFinite(lengthPassword))){ //check if input is not numeric value
-    alert("Please input proper length!");
+    alert("Please input proper length with numeric value!");
     return 1;
   }
   if((lengthPassword < 8) || (lengthPassword > 128)){ //check if input has proper length
     alert("Invalid length. (Length should be at least 8 characters and no more than 128 characters)")
     return 1;
   }
-  return 0;
+  return 0; //if user input is valid, return 0, else return 1
 }
 
 function generatePassword() {
+  //Make sure to clear result and allChar array before generating new password
+  password.result = ""; 
+  password.allChar = [];
+
   var lengthPassword = prompt("Enter the length of the password. (At least 8 characters and no more than 128 characters)"); //user input
 
   if(passwordLength(lengthPassword) == 1){ //passwordLength() to check if the input length of password is valid or not
-    return "";
+    return ""; //invalid length will return and exit
   }
 
   //gathering criterias for password
@@ -53,16 +58,13 @@ function generatePassword() {
   var numericTrue = confirm("Include numeric?");
   var specialTrue = confirm("Include Special?");
 
-  if((lowercaseTrue || uppercaseTrue || numericTrue || specialTrue) === false){ //return default result (empty) if there is no selected criteria
+  //return default result (empty) if there is no selected criteria
+  if((lowercaseTrue || uppercaseTrue || numericTrue || specialTrue) === false){ 
     alert("No selected criteria: Cannot generate password");
-    return password.result;
+    return password.result; //will return empty as password.result is reset to empty for every generation
   } 
 
   //Now generate password based on selected criteria//
-
-  password.result = ""; //Make sure to clear result and allChar array before generating new password
-  password.allChar = [];
-
   //Make sure to include at least one selected criteria in password
   if(lowercaseTrue){
     password.result = password.result + (password.lowerChar[Math.floor(Math.random() * password.lowerChar.length)]);
@@ -81,14 +83,15 @@ function generatePassword() {
     password.allChar = password.allChar.concat(password.specialChar);
   }
 
-  while(password.resultLength() < lengthPassword){ //add rest of the characters randomly until password reaches to desired length
+  //Now add rest of the characters randomly until password reaches to desired length
+  while(password.resultLength() < lengthPassword){ 
     password.result = password.result + (password.allChar[Math.floor(Math.random() * password.allChar.length)]);
   }
-  console.log(password.result);
+  //console.log(password.result);
   //Finally, randomly shffule password
   password.result = shuffle(password.result);
   
-  console.log(password.result);
+  //console.log(password.result);
 
   return password.result;
   
