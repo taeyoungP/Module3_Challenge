@@ -41,18 +41,21 @@ The following image shows the web application's appearance and functionality:
 
 ## Description
 
+Deployed Link: https://taeyoungp.github.io/Module3_Challenge/
+
 The following image shows the web application's appearance and functionality:
 
 ![The Password Generator application displays a red button to "Generate Password".](./Assets/module3_Challenge.png)
 
 When red button is clicked, prompt box will appear asking for the length of the paswword. Uesr needs to input password length that is at least 8 and no more than 128. Otherwise, generator will not make password.
 
-Once proper length has been provided, there will be total four confirm boxes pop up to ask user to include lowercase, uppercase, numeric, and/or special characters for the password. If none of them are selected, since there is no selected criteria, it will exit with alert saying that password cannot be generated. 
+![The Password Generator application asking user to select criteria.](./Assets/module3_criteria_selection.png)
 
-After criteria selection, now it will generate the random password based on user's input, and the result(password) will show up inside the box of the webpage:
+Once proper length has been provided, there will be total four confirm boxes pop up to ask user to include lowercase, uppercase, numeric, and/or special characters for the password. If none of them are selected, since there is no selected criteria, it will exit with alert saying that password cannot be generated. 
 
 ![The Password Generator application displays a generated password.](./Assets/module3_Challenge2.png)
 
+After criteria selection, now it will generate the random password based on user's input, and the result(password) will show up inside the box of the webpage:
 
 
 ## Grading Requirements

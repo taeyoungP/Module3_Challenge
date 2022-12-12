@@ -1,5 +1,5 @@
 //Shuffle function
-//function algorithm brought from https://stackoverflow.com/questions/3079385/str-shuffle-equivalent-in-javascript
+//function algorithm referenced from https://stackoverflow.com/questions/3079385/str-shuffle-equivalent-in-javascript
 function shuffle(string) { //Shuffle
   var char = string.split('');
   for (var i = char.length; i > 0;) {
@@ -27,8 +27,8 @@ var password = {
 
 //Check if user input is numeric value and has proper length
 function passwordLength(lengthPassword) { 
-  if(lengthPassword === null){ //canceled
-    return 1;
+  if(lengthPassword === null){ //if user cancel, exit
+    return 1; 
   }
   if(!(isFinite(lengthPassword))){ //check if input is not numeric value
     alert("Please input proper length with numeric value!");
@@ -83,18 +83,18 @@ function generatePassword() {
     password.allChar = password.allChar.concat(password.specialChar);
   }
 
-  //Now add rest of the characters randomly until password reaches to desired length
+  //Now add rest of the characters randomly until password reaches to user's desired length
   while(password.resultLength() < lengthPassword){ 
     password.result = password.result + (password.allChar[Math.floor(Math.random() * password.allChar.length)]);
   }
   //console.log(password.result);
-  //Finally, randomly shffule password
+
+  //Finally, randomly shffule the password
   password.result = shuffle(password.result);
   
   //console.log(password.result);
 
-  return password.result;
-  
+  return password.result; 
 }
 
 // Assignment Code
